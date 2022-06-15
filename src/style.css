@@ -4,12 +4,27 @@
     box-sizing: border-box;
 }
 
+article{
+    display: grid;
+    grid-template-areas: 
+            "header"
+            "products"
+            "footer";
+}
+
 header{
-    height: 7vh;
+
+    grid-area: header;
+    height: 8vh;
+    width: auto;
     background: rgb(248, 0, 50) none repeat scroll 0% 0%;
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+.mobile_search{
+    display: none;
 }
 
 .search{
@@ -53,7 +68,78 @@ header{
     display: flex;
     justify-content: center;
 }
+.ux button{
+    border: 0px;
+    background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;
+}
 
 .ux img{
-    margin-left: 20px;
+    margin-left: 25px;
+}
+
+.products{
+    grid-area: products;
+    height: 10vh;
+    width: 100%;
+    background-color: blue;
+    display: flex;
+}
+
+@media screen and (max-width: 995px){
+    article{
+        display: grid;
+        grid-template-areas: 
+                "header" "header" "header"
+                "search" "search" "search"
+                "products" "products" "products"
+                "footer" "footer" "footer";
+    }
+    .search{
+        display: none;
+    }
+    .mobile_search{
+        display: block;
+        background: rgb(248, 0, 50) none repeat scroll 0% 0%;
+        grid-area: search;
+        width: 100%;
+        transition: all 0.1s ease-in-out 0s;
+        will-change: top;
+        flex: 5 1 0%;
+        padding: 0px 48px;
+        padding-bottom: 10px;
+    }
+    .mobile_search form{
+        display: flex;
+        width: 100%;
+        background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+        border-radius: 8px;
+        height: 40px;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 10px 15px;
+        z-index: 0;
+        position: relative;
+    }
+    .mobile_search input{
+        outline: currentcolor none medium;
+        width: 100%;
+        background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;
+        border: medium none;
+        padding: 11px 0px 11px 16px;
+        font-size: 16px;
+        font-family: "Arial", sans-serif;
+    }
+    .mobile_search button{
+        outline: currentcolor none medium;
+        margin-right: 15px;
+        background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;
+        border: medium none;
+    }
+    
+    .ux{
+        margin-right: 10px;
+    }
+
+    .ux img{
+        margin-left: 10px;
+        max-width: 20%;
+    }
 }

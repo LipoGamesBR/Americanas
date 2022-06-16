@@ -81,8 +81,26 @@ header{
     grid-area: products;
     height: 10vh;
     width: 100%;
-    background-color: blue;
     display: flex;
+    height: 70vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.featured_products{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.featured_products img{
+    width: 40%;
+    max-width: 600px;
+}
+
+.info{
+    max-width: 40%;
 }
 
 @media screen and (max-width: 995px){
